@@ -16,10 +16,11 @@ Here are some screenshots of the interface:
 
 First of all, take a look at **src/main/java/com/yegorov/app/ConstKey.java** and fill it with correct values:
 1. ````VK_APP_ID````
+
 2. ````VK_WALL_OWNER_ID````
 
 Import the root folder into your IDE (IntelliJ IDEA), then run project.
 
 ### Provider weather forecast
 
-Weather information is taken from the [this](http://inmart.ua/show_weather/) site.
+Weather information is taken from the [this](http://inmart.ua/show_weather) site.
