@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AWeather</string>
+    <string name="sign_in_vk">Sign in VK</string>
+    <string name="share_weather">Share weather</string>
+    <string name="current_weather">Current weather forecast in Gorlovka!</string>
+    <string name="vk_domain">vk.com/</string>
+    <string name="success_share">You are successfully shared!</string>
+    <string name="title_activity_weather">Weather</string>
+    <string name="please_wait">Please wait...</string>
+    <string name="getting_weather_info">Getting weather data.</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
