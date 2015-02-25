@@ -131,6 +131,21 @@ public class Time {
     }
 
     /**
+     * Converts double hour to format hh:mm
+     *
+     * @param hour
+     * @return Time
+     */
+    public static Time valueOfHour(double hour) {
+        int h, m;
+        double min;
+        h = (int)hour;
+        min = hour - h;
+        m = (int)(min * MINUTES_IN_HOUR);
+        return new Time(h, m, 0);
+    }
+
+    /**
      * Time frame
      * @param time1 - first time
      * @param time2 - second time
@@ -154,7 +169,7 @@ public class Time {
      * @param hours from 0 to 23
      * @throws ErrorTimeException
      */
-    public void setHours(byte hours) throws ErrorTimeException {
+    public void setHours(int hours) throws ErrorTimeException {
         if(hours < MIN_TIME || hours > MAX_HOUR)
             throw new ErrorTimeException("Hours less than 0 or more than 23");
         this.hours = hours;
@@ -172,7 +187,7 @@ public class Time {
      * @param minutes from 0 to 59
      * @throws ErrorTimeException
      */
-    public void setMinutes(byte minutes) throws ErrorTimeException {
+    public void setMinutes(int minutes) throws ErrorTimeException {
         if(minutes < MIN_TIME || minutes > MAX_MINUTE)
             throw new ErrorTimeException("Minutes less than 0 or more than 59");
         this.minutes = minutes;
@@ -190,7 +205,7 @@ public class Time {
      * @param seconds from 0 to 59
      * @throws ErrorTimeException
      */
-    public void setSeconds(byte seconds) throws ErrorTimeException {
+    public void setSeconds(int seconds) throws ErrorTimeException {
         if(seconds < MIN_TIME || seconds > MAX_SECOND)
             throw new ErrorTimeException("Seconds less than 0 or more than 59");
         this.seconds = seconds;
@@ -200,7 +215,7 @@ public class Time {
      * Time format, no seconds
      * @return String format hh:mm (06:45)
      */
-    public String toStringFormat() {
+    public String toStringFormatHHMM() {
         return String.format("%02d:%02d", hours, minutes);
     }
 

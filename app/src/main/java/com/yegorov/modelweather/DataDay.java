@@ -1,7 +1,5 @@
 package com.yegorov.modelweather;
 
-import com.yegorov.util.Time;
-
 /**
  * Data that does not change during the day
  *
@@ -10,90 +8,88 @@ import com.yegorov.util.Time;
  * @see com.yegorov.util.Time
  */
 public class DataDay {
-    /**
-     * Time of sunrise
-     */
-    private Time sunRise;
+    // TODO Class that controls parameters moon and sun (see as Weather class)
+
+    private int day;
+
+    private int month;
+
+    private int year;
 
     /**
-     * Time of sunset
+     * Sun's parameters
+     * @see com.yegorov.modelweather.Sun
      */
-    private Time sunSet;
+    private Sun sun;
 
     /**
-     *  Moon phase
-     *  @see com.yegorov.modelweather.MoonPhase
+     *  Moon's parameters
+     *  @see com.yegorov.modelweather.Moon
      */
-    private MoonPhase moonPhase;
+    private Moon moon;
 
     /**
      * Private constructor
-     * @param sunRise Time of sunrise
-     * @param sunSet Time of sunset
-     * @param moonPhase Moon phase
+     * @param sun Sun's parameters
+     * @param moon Moon's parameters
      */
-    private DataDay(Time sunRise, Time sunSet, MoonPhase moonPhase) {
-        this.sunRise = sunRise;
-        this.sunSet = sunSet;
-        this.moonPhase = moonPhase;
+    private DataDay(Sun sun, Moon moon) {
+        this.sun = sun;
+        this.moon = moon;
+    }
+
+    private DataDay(int day, int month, int year) {
+        this.sun = new Sun();
+        this.moon = new Moon();
+
+        this.day = day;
+        this.month = month;
+        this.year = year;
     }
 
     /**
      * Factory Method
-     * @param sunRise Time of sunrise
-     * @param sunSet Time of sunset
-     * @param moonPhase Moon phase
+     * @param sun Sun's parameters
+     * @param moon Moon's parameters
      * @return New object <b>DataDay</b>, which contains data that are constant for one day
      */
-    public static DataDay newInstance(Time sunRise, Time sunSet, MoonPhase moonPhase) {
-        return new DataDay(sunRise, sunSet, moonPhase);
+    public static DataDay newInstance(Sun sun, Moon moon) {
+        return new DataDay(sun, moon);
+    }
+
+    public static DataDay newInstance(int day, int month, int year) {
+        return new DataDay(day, month, year);
     }
 
     /**
-     * @return <b>Time</b> of sunrise
+     * @return Sun's parameters (sunrise and sunset)
      * @see com.yegorov.util.Time
      */
-    public Time getSunRise() {
-        return sunRise;
+    public Sun getSun() {
+        return sun;
     }
 
     /**
-     * @param sunRise Time of sunrise
+     * @param sun Time of sunrise
      * @see com.yegorov.util.Time
      */
-    public void setSunRise(Time sunRise) {
-        this.sunRise = sunRise;
+    public void setSun(Sun sun) {
+        this.sun = sun;
     }
 
     /**
-     * @return <b>Time</b> of sunset
-     * @see com.yegorov.util.Time
+     * @return Moon's parameters
+     * @see com.yegorov.modelweather.Moon
      */
-    public Time getSunSet() {
-        return sunSet;
+    public Moon getMoon() {
+        return moon;
     }
 
     /**
-     * @param sunSet Time of sunset
-     * @see com.yegorov.util.Time
+     * @param moon Moon's parameters
+     * @see com.yegorov.modelweather.Moon
      */
-    public void setSunSet(Time sunSet) {
-        this.sunSet = sunSet;
-    }
-
-    /**
-     * @return <b>MoonPhase</b> - Moon phase
-     * @see com.yegorov.modelweather.MoonPhase
-     */
-    public MoonPhase getMoonPhase() {
-        return moonPhase;
-    }
-
-    /**
-     * @param moonPhase Moon phase
-     * @see com.yegorov.modelweather.MoonPhase
-     */
-    public void setMoonPhase(MoonPhase moonPhase) {
-        this.moonPhase = moonPhase;
+    public void setMoon(Moon moon) {
+        this.moon = moon;
     }
 }

@@ -12,40 +12,50 @@ public enum MoonPhase {
     /**
      * New Moon - state, when the moon is not visible.
      */
-    NewMoon,
+    NewMoon("New Moon"),
 
     /**
      * The young moon - the first appearance of the moon in the sky after the new moon in the form of a narrow crescent.
      */
-    WaxingCrescent,
+    WaxingCrescent("Waxing Crescent"),
 
     /**
      * First quarter - a condition where the illuminated half of the moon.
      */
-    FirstQuarter,
+    FirstQuarter("First Quarter"),
 
     /**
      * The waxing moon.
      */
-    WaxingGibbous,
+    WaxingGibbous("Waxing Gibbous"),
 
     /**
      * Full Moon - a condition where the whole moon lit entirely.
      */
-    FullMoon,
+    FullMoon("Full Moon"),
 
     /**
      * Waning moon.
      */
-    WaningGibbous,
+    WaningGibbous("Waning Gibbous"),
 
     /**
      * Last quarter - a condition where the back half of the moon is illuminated.
      */
-    ThirdQuarter,
+    ThirdQuarter("Third Quarter"),
 
     /**
      * Old moon.
      */
-    WaningCrescent,
+    WaningCrescent("Waning Crescent");
+
+    private String str;
+
+    private MoonPhase(String str) {
+        this.str = str;
+    }
+
+    public String toStr() {
+        return str;
+    }
 }
