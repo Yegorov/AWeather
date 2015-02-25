@@ -9,4 +9,9 @@ android:
     - android-19
     - extra
 
-script: ./gradlew build connectedCheck
+before_script:
+  - chmod +x gradlew
+
+script: 
+  - ./gradlew build connectedCheck
+  - ./gradlew build assembleDebug
