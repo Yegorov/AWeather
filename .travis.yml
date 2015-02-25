@@ -9,4 +9,4 @@ android:
     - android-19
     - extra
 
-script: ./gradlew build connectedCheck
+script: ./gradlew build
