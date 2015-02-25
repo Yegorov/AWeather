@@ -31,3 +31,8 @@ More information how to get [`VK_APP_ID`](/wiki/AppGuide/CreateAppVK.md) and [`F
 ### Provider weather forecast
 
 Weather information is taken from the [this](http://inmart.ua/show_weather) site.
+
+### Changelog
++ Support fragments
++ Added sunrise and sunset times.
++ Added moon phases.
